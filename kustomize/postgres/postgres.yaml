@@ -56,3 +56,8 @@ spec:
   proxy:
     pgBouncer:
       image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbouncer:centos8-1.15-0
+
+  monitoring:
+    pgmonitor:
+      exporter:
+       image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres-exporter:ubi8-5.0.0-0
