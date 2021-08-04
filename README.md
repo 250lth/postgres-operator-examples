@@ -11,3 +11,11 @@ Each of the examples has its own README that guides you through the process of d
 You can find out more information about [PGO](https://github.com/CrunchyData/postgres-operator), the [Postgres Operator](https://github.com/CrunchyData/postgres-operator) from [Crunchy Data](https://www.crunchydata.com) at the project page:
 
 [https://github.com/CrunchyData/postgres-operator](https://github.com/CrunchyData/postgres-operator)
+
+# psql debug
+
+```
+kubectl run -it --rm --restart=Never pgclient --image=postgres:alpine sh
+psql "host=hippo-pgbouncer.postgres-operator.svc port=5432 user=hippo password=SO
+6))X}xQtKB@n/DyPo^j^bV sslmode=require dbname=hippo"
+```
