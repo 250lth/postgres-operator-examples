@@ -32,3 +32,7 @@ kubectl edit pv test-pv2
 ```
 alter user hippo with password ')@9,JDWEYVO8?]MU?Qr,jPvB';
 ```
+
+# 添加database
+
+https://access.crunchydata.com/documentation/postgres-operator/v5/tutorial/user-management/
