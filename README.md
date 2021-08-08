@@ -19,3 +19,16 @@ kubectl run -it --rm --restart=Never pgclient --image=postgres:alpine sh
 psql "host=hippo-pgbouncer.postgres-operator.svc port=5432 user=hippo password=SO
 6))X}xQtKB@n/DyPo^j^bV sslmode=require dbname=hippo"
 ```
+
+# pv重用
+
+```
+kubectl edit pv test-pv2
+```
+删除claimRef部分
+
+# 重新创建集群，需更新密码
+
+```
+alter user hippo with password ')@9,JDWEYVO8?]MU?Qr,jPvB';
+```
