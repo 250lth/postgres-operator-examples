@@ -13,8 +13,8 @@ spec:
         - "ReadWriteOnce"
         resources:
           requests:
-            storage: 1Gi
-        storageClassName: rook-ceph-block
+            storage: {{ .Values.pvcs.instances.storageSize }}
+        storageClassName: {{ .Values.pvcs.instances.storageClassName }}
   backups:
     pgbackrest:
       image: {{ .Values.pgBackRest}}
@@ -28,17 +28,16 @@ spec:
             - "ReadWriteOnce"
             resources:
               requests:
-                storage: 1Gi
-            storageClassName: rook-ceph-block
-      - name: repo2
-        volume:
-          volumeClaimSpec:
-            accessModes:
-            - "ReadWriteOnce"
-            resources:
-              requests:
-                storage: 1Gi
-            storageClassName: rook-ceph-block
+                storage: {{ .Values.pvcs.repos.storageSize }}
+            storageClassName: {{ .Values.pvcs.repos.storageClassName }}
   proxy:
     pgBouncer:
       image: {{ .Values.pgBouncer}}
+  patroni:
+    dynamicConfiguration:
+      postgresql:
+        parameters:
+          max_parallel_workers: 2
+          max_worker_processes: 2
+          shared_buffers: 1GB
+          work_mem: 2MB
