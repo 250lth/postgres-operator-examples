@@ -62,9 +62,9 @@ spec:
       exporter:
        image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres-exporter:ubi8-5.0.0-0
 
-  #users:
-  #  - name: hello
-  #    databases:
-  #      - hello1
-  #      - hello2
-  #    options: "SUPERUSER"
+  users:
+    - name: hello
+      databases:
+        - hello1
+        - hello2
+      options: "SUPERUSER"

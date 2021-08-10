@@ -41,3 +41,7 @@ spec:
           max_worker_processes: 2
           shared_buffers: 1GB
           work_mem: 2MB
+  {{- with .Values.users }}
+  users:
+    {{- toYaml . | nindent 4}}
+  {{- end }}

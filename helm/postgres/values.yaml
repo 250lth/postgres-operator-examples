@@ -19,3 +19,10 @@ pvcs:
 postgres: registry.developers.crunchydata.com/crunchydata/crunchy-postgres-ha:centos8-13.3-1
 pgBackRest: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:centos8-2.33-1
 pgBouncer: registry.developers.crunchydata.com/crunchydata/crunchy-pgbouncer:centos8-1.15-1
+
+users:
+  - name: apulis
+    databases:
+      - db1
+      - db2
+    options: SUPERUSER
